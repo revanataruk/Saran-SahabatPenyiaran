@@ -1,38 +1,93 @@
-# Saran / Sahabat Penyiaran 🎙️📺
-**Saran / Sahabat Penyiaran** is the official website of the **Indonesian Broadcasting Commission (KPI)** that has been redesigned as a reporting platform for the public regarding television, radio, or other broadcasts considered to violate broadcasting regulations.
+# 🎙️ Saran / Sahabat Penyiaran
 
-This version is a redesign result to improve the appearance, comfort, and accessibility of the website, especially on desktop displays. Development for the mobile version is still in progress.
+**Official Broadcasting Complaint Platform for Indonesian Broadcasting Commission (KPI)**
 
-## 🔍 Main Website Functions
-- Report TV/radio/broadcast programs that violate guidelines
-- Provide information on KPI institution profile and functions
-- Facilitate tracking of public report status
-- Present clean and user-friendly interface
-
-## 🛠️ Technologies Used
-- HTML5 & CSS3
-- Basic JavaScript
-- Design without front-end framework (lightweight static site)
-
-## 📄 Page Structure
-- `index.html` – Main page
-- `aduan.html` – Broadcast reporting form
-- `profil.html` – KPI brief profile
-- `lacakaduan.html` – Track complaint status
-- `header.html` – Separate header component
-- `hero.png`, `kpi.png` – Visual assets
-
-## 🚧 Development Status
-- ✅ Desktop display completed
-- 🧪 Still in exploration & learning phase
-
-## 🌐 Demo
-This website is also available through GitHub Pages:
-🔗 [revnanataruk.github.io/Saran-sahabatpenyiaran](https://revanataruk.github.io/Saran-SahabatPenyiaran/)
-
-## 📬 Contact
-For criticism, suggestions, or development contributions:
-- Email: [diwangkararevan@gmail.com]
-- GitHub: [@revanataruk](https://github.com/revamataruk)
+Saran / Sahabat Penyiaran is the redesigned official website of the **Indonesian Broadcasting Commission (KPI)** that serves as a public reporting platform for television, radio, and other broadcasts that violate broadcasting regulations. This version focuses on improved appearance, comfort, and accessibility, especially for desktop displays.
 
 ---
+
+## 🌟 Features
+
+- ✅ **Report Broadcasting Violations**  
+  Submit complaints about TV/radio/broadcast programs that violate guidelines
+- ✅ **KPI Institution Information**  
+  Access comprehensive profile and functions of the Broadcasting Commission
+- ✅ **Complaint Tracking System**  
+  Track the status of submitted public reports in real-time
+- ✅ **Clean User Interface**  
+  Modern, user-friendly design optimized for desktop experience
+- ✅ **Lightweight Architecture**  
+  Fast loading static site without heavy frameworks
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend:
+- **HTML5 & CSS3**: Semantic structure and modern styling
+- **Vanilla JavaScript**: Dynamic interactions and form handling
+- **Component-based Design**: Modular architecture for maintainability
+
+### Architecture:
+- **Static Site**: Lightweight design without front-end framework dependencies
+- **Responsive Design**: Desktop-optimized with mobile development in progress
+
+---
+
+## 📁 Project Structure
+
+```
+├── index.html          # Main landing page
+├── aduan.html          # Broadcasting complaint form
+├── profil.html         # KPI institution profile
+├── lacakaduan.html     # Complaint status tracking
+├── header.html         # Reusable header component
+├── assets/
+│   ├── hero.png        # Hero section visual
+│   └── kpi.png         # KPI logo and branding
+└── README.md
+```
+
+---
+
+## 🚀 Development Status
+
+- ✅ **Desktop Display**: Fully completed and optimized
+- 🧪 **Mobile Version**: Currently in exploration & learning phase
+- 📱 **Responsive Design**: Mobile development in progress
+
+---
+
+## 🌐 Live Demo
+
+The website is accessible through GitHub Pages:  
+**🔗 [revnanataruk.github.io/Saran-sahabatpenyiaran](https://revnanataruk.github.io/Saran-sahabatpenyiaran)**
+
+---
+
+## 🎯 Project Objectives
+
+This project was developed to:
+- Improve public accessibility to broadcasting complaint services
+- Modernize the KPI's digital presence with clean, intuitive design
+- Implement lightweight, fast-loading web architecture
+- Provide seamless complaint submission and tracking experience
+
+---
+
+## 📬 Contact & Contributions
+
+For criticism, suggestions, or development contributions:
+
+- **Email**: [diwangkararevan@gmail.com](mailto:diwangkararevan@gmail.com)
+- **GitHub**: [@revanataruk](https://github.com/revanataruk)
+
+---
+
+## 📄 License
+
+This project is developed for the Indonesian Broadcasting Commission (KPI) as a public service platform.
+
+---
+
+*Built with ❤️ for better broadcasting standards in Indonesia*
