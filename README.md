@@ -89,5 +89,3 @@ For criticism, suggestions, or development contributions:
 This project is developed for the Indonesian Broadcasting Commission (KPI) as a public service platform.
 
 ---
-
-*Built with ❤️ for better broadcasting standards in Indonesia*
