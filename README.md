@@ -87,4 +87,3 @@ For criticism, suggestions, or development contributions:
 ## 📄 License
 
 This project is developed for the Indonesian Broadcasting Commission (KPI) as a public service platform.
-
