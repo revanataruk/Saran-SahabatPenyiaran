@@ -28,11 +28,11 @@ This version is a redesign result to improve the appearance, comfort, and access
 
 ## 🌐 Demo
 This website is also available through GitHub Pages:
-🔗 [revnarc.github.io/Saran-sahabatpenyiaran](https://revnarc.github.io/Saran-sahabatpenyiaran)
+🔗 [revnarc.github.io/Saran-sahabatpenyiaran](https://revanataruk.github.io/Saran-SahabatPenyiaran/)
 
 ## 📬 Contact
 For criticism, suggestions, or development contributions:
-- Email: [bangrevan47@gmail.com]
-- GitHub: [@revnarc](https://github.com/revnarc)
+- Email: [diwangkararevan@gmail.com]
+- GitHub: [@revanataruk](https://github.com/revamataruk)
 
 ---
