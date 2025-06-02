@@ -1,0 +1,54 @@
+<!-- header.html -->
+<header class="bg-white shadow-sm">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo dan Nama -->
+      <div class="flex items-center">
+        <img src="kpi.png" alt="Logo KPI" class="h-12">
+        <div class="ml-4">
+          <h1 class="text-xl font-bold text-gray-800">SARAN</h1>
+          <p class="text-sm font-bold text-gray-600">Sahabat Penyiaran</p>
+        </div>
+      </div>
+
+      <!-- Hamburger Icon (mobile only) -->
+      <div class="lg:hidden">
+        <button id="hamburger-icon" class="text-gray-800 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Navigation & Buttons (desktop only) -->
+      <div class="hidden lg:flex items-center space-x-6">
+        <nav class="flex space-x-4">
+          <a href="index.html" class="nav-link px-3 py-2 font-bold text-gray-700 hover:text-yellow-600 border-b-2 border-transparent hover:border-yellow-600">BERANDA</a>
+          <a href="profil.html" class="nav-link px-3 py-2 font-bold text-gray-700 hover:text-yellow-600 border-b-2 border-transparent hover:border-yellow-600">PROFIL</a>
+          <a href="#data" class="nav-link px-3 py-2 font-bold text-gray-700 hover:text-yellow-600 border-b-2 border-transparent hover:border-yellow-600">DATA</a>
+          <a href="#berita" class="nav-link px-3 py-2 font-bold text-gray-700 hover:text-yellow-600 border-b-2 border-transparent hover:border-yellow-600">BERITA</a>
+          <a href="#kontak" class="nav-link px-3 py-2 font-bold text-gray-700 hover:text-yellow-600 border-b-2 border-transparent hover:border-yellow-600">KONTAK</a>
+        </nav>
+        <div class="flex space-x-4">
+          <button class="px-4 py-2 font-bold text-yellow-600 hover:bg-yellow-50 rounded-lg">Masuk</button>
+          <button class="px-4 py-2 font-bold bg-yellow-600 text-white rounded-lg hover:bg-yellow-700">Daftar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden mt-2 bg-white rounded-lg shadow p-4 space-y-3 transition-all duration-300 ease-in-out">
+      <a href="index.html" class="block font-bold text-gray-700 hover:text-yellow-600">BERANDA</a>
+      <a href="profil.html" class="block font-bold text-gray-700 hover:text-yellow-600">PROFIL</a>
+      <a href="#data" class="block font-bold text-gray-700 hover:text-yellow-600">DATA</a>
+      <a href="#berita" class="block font-bold text-gray-700 hover:text-yellow-600">BERITA</a>
+      <a href="#kontak" class="block font-bold text-gray-700 hover:text-yellow-600">KONTAK</a>
+      <hr class="border-t border-gray-200">
+      <div class="flex flex-col space-y-3">
+        <button class="w-full px-4 py-2 font-bold text-yellow-600 hover:bg-yellow-50 rounded-lg text-left">Masuk</button>
+        <button class="w-full px-4 py-2 font-bold bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 text-left">Daftar</button>
+      </div>
+    </div>
+  </div>
+</header>

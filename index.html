@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARAN - Sahabat Penyiaran | KPI</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        :root {
+            --primary: #ac0b0b;
+            --secondary: #f1d11c;
+            --accent: #000000;
+        }
+        .nav-link:hover {
+            background-color: rgba(66, 153, 225, 0.1);
+        }
+        .stats-card {
+            transition: transform 0.2s;
+        }
+        .stats-card:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">  
+    <div id="header-container"></div>
+    <!-- Hero Section -->
+    <section class="bg-red-700 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl">
+                <h2 class="text-4xl font-bold mb-4">Suarakan Kepedulian Anda</h2>
+                <p class="text-xl mb-8">Laporkan pelanggaran siaran TV dan Radio untuk penyiaran yang lebih baik</p>
+                <div class="flex space-x-4">
+                    <a href="aduan.html" class="bg-white text-red-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-100">Buat Pengaduan</a>
+                    <a href="lacakaduan.html" class="border border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-red-600">Lacak Pengaduan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tambahkan setelah Hero Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-2xl font-bold text-center mb-12">Kategori Pengaduan</h3>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="p-6 rounded-lg bg-red-50 hover:bg-red-100 transition duration-300">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-center mb-2">Konten Kekerasan</h4>
+                    <p class="text-gray-600 text-center text-sm">Adegan kekerasan fisik, verbal, atau psikologis</p>
+                </div>
+                <div class="p-6 rounded-lg bg-red-50 hover:bg-red-100 transition duration-300">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-center mb-2">Konten Dewasa</h4>
+                    <p class="text-gray-600 text-center text-sm">Konten pornografi dan pornoaksi</p>
+                </div>
+                <div class="p-6 rounded-lg bg-red-50 hover:bg-red-100 transition duration-300">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-center mb-2">SARA</h4>
+                    <p class="text-gray-600 text-center text-sm">Konten yang mengandung unsur SARA</p>
+                </div>
+                <div class="p-6 rounded-lg bg-red-50 hover:bg-red-100 transition duration-300">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-center mb-2">Hoax</h4>
+                    <p class="text-gray-600 text-center text-sm">Penyebaran informasi palsu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Alur Pengaduan -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-2xl font-bold text-center mb-12">Alur Pengaduan</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-lg bg-gray-50">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-red-600 text-xl font-bold">1</span>
+                    </div>
+                    <h4 class="font-bold mb-2">Buat Pengaduan</h4>
+                    <p class="text-gray-600">Isi formulir pengaduan dengan lengkap</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-gray-50">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-red-600 text-xl font-bold">2</span>
+                    </div>
+                    <h4 class="font-bold mb-2">Verifikasi</h4>
+                    <p class="text-gray-600">Tim KPI akan memverifikasi pengaduan Anda</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-gray-50">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-red-600 text-xl font-bold">3</span>
+                    </div>
+                    <h4 class="font-bold mb-2">Tindak Lanjut</h4>
+                    <p class="text-gray-600">Pengaduan akan ditindaklanjuti sesuai prosedur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tambahkan setelah Alur Pengaduan -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-center mb-12">Pertanyaan Yang Sering Diajukan</h3>
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h4 class="font-bold mb-2">Bagaimana cara membuat pengaduan?</h4>
+                        <p class="text-gray-600">Anda dapat membuat pengaduan dengan mengklik tombol "Buat Pengaduan" dan mengisi formulir yang tersedia dengan lengkap.</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h4 class="font-bold mb-2">Berapa lama pengaduan akan diproses?</h4>
+                        <p class="text-gray-600">Pengaduan akan diproses dalam waktu 3-5 hari kerja setelah verifikasi berhasil dilakukan.</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h4 class="font-bold mb-2">Apa saja kriteria pengaduan yang valid?</h4>
+                        <p class="text-gray-600">Pengaduan harus memuat informasi lengkap seperti nama program, stasiun TV/radio, waktu tayang, dan bukti pelanggaran.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistik -->
+    <section id= data class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h3 class="text-2xl font-bold mb-8">Statistik Pengaduan 2024</h3>
+            
+            <!-- Top Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="stats-card">
+                        <h4 class="text-gray-600 mb-2">Total Pengaduan</h4>
+                        <p class="text-3xl font-bold text-red-600">331</p>
+                        <p class="text-sm text-gray-500 mt-2">↑ 12% dari bulan lalu</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="stats-card">
+                        <h4 class="text-gray-600 mb-2">Dalam Proses</h4>
+                        <p class="text-3xl font-bold text-yellow-600">45</p>
+                        <p class="text-sm text-gray-500 mt-2">Rata-rata 3 hari proses</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="stats-card">
+                        <h4 class="text-gray-600 mb-2">Selesai</h4>
+                        <p class="text-3xl font-bold text-green-600">286</p>
+                        <p class="text-sm text-gray-500 mt-2">↑ 8% tingkat penyelesaian</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="stats-card">
+                        <h4 class="text-gray-600 mb-2">Media Sosial</h4>
+                        <p class="text-3xl font-bold text-purple-600">92</p>
+                        <p class="text-sm text-gray-500 mt-2">23% dari total pengaduan</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="font-bold mb-4">Trend Pengaduan Bulanan</h4>
+                    <div class="h-64">
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="font-bold mb-4">Pengaduan per Kategori</h4>
+                    <div class="h-64">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-center">
+                        <h4 class="font-bold text-lg mb-2">Waktu Respon</h4>
+                        <div class="text-3xl font-bold text-red-600 mb-2">2.5 Jam</div>
+                        <p class="text-sm text-gray-500">Rata-rata waktu respon awal</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-center">
+                        <h4 class="font-bold text-lg mb-2">Tingkat Kepuasan</h4>
+                        <div class="text-3xl font-bold text-red-600 mb-2">92%</div>
+                        <p class="text-sm text-gray-500">Berdasarkan feedback pengguna</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-center">
+                        <h4 class="font-bold text-lg mb-2">Pengguna Aktif</h4>
+                        <div class="text-3xl font-bold text-red-600 mb-2">15K+</div>
+                        <p class="text-sm text-gray-500">Total pengguna terdaftar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tambahkan sebelum Berita Terkini -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-2xl font-bold mb-8">Dampak Pengaduan Masyarakat</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-red-50 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-red-600 mb-2">93%</div>
+                    <p class="text-gray-700">Tingkat keberhasilan penanganan pengaduan</p>
+                </div>
+                <div class="bg-red-50 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-red-600 mb-2">1,240+</div>
+                    <p class="text-gray-700">Program siaran yang diperbaiki</p>
+                </div>
+                <div class="bg-red-50 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-red-600 mb-2">15,000+</div>
+                    <p class="text-gray-700">Masyarakat yang berpartisipasi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Berita Terkini -->
+    <section id= berita class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h3 class="text-2xl font-bold">Berita Terkini</h3>
+                <a href="#" class="text-red-600 hover:text-red-700">Lihat Semua</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="rounded-lg overflow-hidden shadow-sm">
+                    <img src="hero.png" alt="Berita 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="text-gray-500 text-sm mb-2">12 December 2024</p>
+                        <h4 class="font-bold mb-2">KPI Tegur Program Siaran yang Melanggar</h4>
+                        <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                        <a href="#" class="text-red-600 hover:text-red-700">Baca selengkapnya</a>
+                    </div>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-sm">
+                    <img src="hero.png" alt="Berita 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="text-gray-500 text-sm mb-2">12 December 2024</p>
+                        <h4 class="font-bold mb-2">KPI Tegur Program Siaran yang Melanggar</h4>
+                        <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                        <a href="#" class="text-red-600 hover:text-red-700">Baca selengkapnya</a>
+                    </div>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-sm">
+                    <img src="hero.png" alt="Berita 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="text-gray-500 text-sm mb-2">12 December 2024</p>
+                        <h4 class="font-bold mb-2">KPI Tegur Program Siaran yang Melanggar</h4>
+                        <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                        <a href="#" class="text-red-600 hover:text-red-700">Baca selengkapnya</a>
+                    </div>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-sm">
+                    <img src="hero.png" alt="Berita 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="text-gray-500 text-sm mb-2">12 December 2024</p>
+                        <h4 class="font-bold mb-2">KPI Tegur Program Siaran yang Melanggar</h4>
+                        <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                        <a href="#" class="text-red-600 hover:text-red-700">Baca selengkapnya</a>
+                    </div>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-sm">
+                    <img src="hero.png" alt="Berita 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="text-gray-500 text-sm mb-2">12 December 2024</p>
+                        <h4 class="font-bold mb-2">KPI Tegur Program Siaran yang Melanggar</h4>
+                        <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                        <a href="#" class="text-red-600 hover:text-red-700">Baca selengkapnya</a>
+                    </div>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-sm">
+                    <img src="hero.png" alt="Berita 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="text-gray-500 text-sm mb-2">12 December 2024</p>
+                        <h4 class="font-bold mb-2">KPI Tegur Program Siaran yang Melanggar</h4>
+                        <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                        <a href="#" class="text-red-600 hover:text-red-700">Baca selengkapnya</a>
+                    </div>
+                </div>
+                
+                <!-- Additional news cards would go here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Tambahkan sebelum Footer -->
+    <section id= kontak class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-2xl font-bold mb-8">Butuh Bantuan?</h3>
+                <p class="text-gray-600 mb-8">Tim kami siap membantu Anda 24/7</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <svg class="w-8 h-8 text-red-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                        <h4 class="font-bold mb-2">Telepon</h4>
+                        <p class="text-gray-600">0800-1-234-567</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <svg class="w-8 h-8 text-red-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <h4 class="font-bold mb-2">Email</h4>
+                        <p class="text-gray-600">bantuan@kpi.go.id</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <svg class="w-8 h-8 text-red-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                        </svg>
+                        <h4 class="font-bold mb-2">Live Chat</h4>
+                        <p class="text-gray-600">Tersedia 24/7</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-red-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- About Section -->
+                <div>
+                    <h4 class="font-bold mb-4">Tentang SARAN</h4>
+                    <p class="text-white">Sistem Informasi Pengaduan Penyiaran yang dikelola oleh Komisi Penyiaran Indonesia (KPI)</p>
+                </div>
+                                
+                <!-- Contact Section -->
+                <div>
+                    <h4 class="font-bold mb-4">Kontak</h4>
+                    <ul class="space-y-2">
+                        <li class="text-white">KPI Pusat</li>
+                        <li class="text-white">(021) 6340713</li>
+                        <li class="text-white">layananpublik@kpi.go.id</li>
+                        <li class="text-white">Jl. Ir. H. Juanda No.36, RT.7/RW.2, Kb. Klp., Kecamatan Gambir, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta</li>
+                    </ul>
+                </div>
+                
+                <!-- link Section -->
+                <div>
+                    <h4 class="font-bold mb-4">Link Terkait</h4>
+                    <ul class="space-y-2">
+                        <li class="text-white">kpi.go.id</li>
+                        <li class="text-white">lapor.go.id</li>
+                        <li class="text-white">smile.kpi.go.id</li>
+                        <li class="text-white">sippn.menpan.go.id</li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Section -->
+                <div>
+                    <h4 class="font-bold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-white">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="text-white hover:text-white">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header-container").innerHTML = html;
+    
+        // Setelah HTML dimasukkan, jalankan toggle hamburger
+        const hamburger = document.getElementById("hamburger-icon");
+        const mobileMenu = document.getElementById("mobile-menu");
+    
+        if (hamburger && mobileMenu) {
+          hamburger.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+          });
+        }
+      })
+      .catch(err => {
+        console.error("Gagal memuat header:", err);
+      });
+    </script>
+    <script>
+        // Initialize trend chart
+        const trendCtx = document.getElementById('trendChart').getContext('2d');
+        new Chart(trendCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Total Pengaduan',
+                    data: [45, 52, 61, 48, 55, 67],
+                    borderColor: '#ef4444',
+                    tension: 0.1
+                }, {
+                    label: 'Diselesaikan',
+                    data: [38, 45, 52, 43, 48, 58],
+                    borderColor: '#22c55e',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // Initialize category chart
+        const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+        new Chart(categoryCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Kekerasan', 'Konten Dewasa', 'SARA', 'Hoax'],
+                datasets: [{
+                    label: 'Jumlah Pengaduan',
+                    data: [120, 80, 60, 71],
+                    backgroundColor: '#ef4444'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
